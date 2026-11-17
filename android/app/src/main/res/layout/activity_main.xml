@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WDPC REMOTE"
+            android:textColor="@color/accent"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/status_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Не подключено"
+            android:textColor="@color/text_dim"
+            android:gravity="center"
+            android:paddingVertical="8dp" />
+
+        <!-- Подключение -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp">
+
+            <Spinner
+                android:id="@+id/device_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="48dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+
+            <Button android:id="@+id/refresh_btn" style="@style/BtBtn"
+                android:text="Поиск" android:layout_weight="1" />
+            <Button android:id="@+id/connect_btn" style="@style/BtBtn"
+                android:text="Подключить" android:layout_weight="1" />
+            <Button android:id="@+id/disconnect_btn" style="@style/BtBtn"
+                android:text="Отключить" android:layout_weight="1" />
+            <Button android:id="@+id/ping_btn" style="@style/BtBtn"
+                android:text="Ping" android:layout_weight="0.6" />
+        </LinearLayout>
+
+        <View style="@style/Divider" />
+
+        <TextView style="@style/SectionTitle" android:text="ОКНА" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button android:id="@+id/alt_tab_btn" style="@style/CmdBtn"
+                android:text="Alt+Tab ▶" android:layout_weight="1" />
+            <Button android:id="@+id/alt_tab_rev_btn" style="@style/CmdBtn"
+                android:text="◀ Alt+Tab" android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button android:id="@+id/task_view_btn" style="@style/CmdBtn"
+                android:text="Task View (Win+Tab)" android:layout_weight="1" />
+            <Button android:id="@+id/win_btn" style="@style/CmdBtn"
+                android:text="Пуск (Win)" android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button android:id="@+id/close_win_btn" style="@style/CmdBtn"
+                android:text="Закрыть окно (Alt+F4)" android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button android:id="@+id/min_all_btn" style="@style/CmdBtn"
+                android:text="Свернуть всё (Win+M)" android:layout_weight="1" />
+            <Button android:id="@+id/desktop_btn" style="@style/CmdBtn"
+                android:text="Рабочий стол (Win+D)" android:layout_weight="1" />
+        </LinearLayout>
+
+        <View style="@style/Divider" />
+
+        <TextView style="@style/SectionTitle" android:text="НАВИГАЦИЯ ПО ОКНАМ" />
+
+        <Button android:id="@+id/hold_alt_btn" style="@style/CmdBtnWide"
+            android:text="Держать Alt" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+
+            <Button android:id="@+id/nav_left_btn" style="@style/CmdBtn"
+                android:text="◀" android:layout_weight="1" />
+            <Button android:id="@+id/nav_enter_btn" style="@style/CmdBtn"
+                android:text="Выбрать ⏎" android:layout_weight="1" />
+            <Button android:id="@+id/nav_right_btn" style="@style/CmdBtn"
+                android:text="▶" android:layout_weight="1" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="1. На ПК запустите: python3 wdpc_server.py\n2. Нажмите «Поиск», выберите ПК, нажмите «Подключить»\n3. Пары Bluetooth не требуется — сервер принимает соединения сам"
+            android:textColor="@color/text_dim"
+            android:textSize="12sp" />
+    </LinearLayout>
+</ScrollView>

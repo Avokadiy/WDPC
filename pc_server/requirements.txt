@@ -1,0 +1,12 @@
+# Зависимости wdpc_server.py
+#
+# Bluetooth RFCOMM работает через встроенный сокет AF_BLUETOOTH (pybluez не нужен),
+# но требуются bluez:  sudo apt install bluez
+#
+# Wi-Fi fallback + веб-интерфейс:
+flask
+flask-sock
+
+# Ввод эмулируется через /dev/uinput (чистый ctypes, доп. пакетов не нужно).
+# Нужен доступ на запись:  sudo usermod -aG input $USER   (перелогиниться)
+# или запуск:  sudo python3 wdpc_server.py

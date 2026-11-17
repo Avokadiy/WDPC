@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.WDPC" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/bg</item>
+        <item name="android:statusBarColor">@color/bg</item>
+        <item name="android:colorAccent">@color/accent</item>
+    </style>
+
+    <style name="CmdBtn" parent="android:Widget.Material.Button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:background">@drawable/btn_bg</item>
+        <item name="android:textColor">@color/text</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:minHeight">56dp</item>
+    </style>
+
+    <style name="CmdBtnWide" parent="CmdBtn">
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="BtBtn" parent="CmdBtn">
+        <item name="android:textSize">13sp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <style name="SectionTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/accent</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.15</item>
+        <item name="android:paddingBottom">6dp</item>
+    </style>
+
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/accent_dark</item>
+        <item name="android:layout_marginVertical">10dp</item>
+    </style>
+</resources>
