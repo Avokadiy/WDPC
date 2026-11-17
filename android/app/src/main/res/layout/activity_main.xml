@@ -28,20 +28,45 @@
             android:gravity="center"
             android:paddingVertical="8dp" />
 
-        <!-- Подключение -->
+        <!-- Подключение: Wi-Fi (рекомендуется для Windows) -->
+        <TextView style="@style/SectionTitle"
+            android:text="ПОДКЛЮЧЕНИЕ — WI-FI (Windows)" />
+
+        <EditText
+            android:id="@+id/ip_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="IP компьютера, напр. 192.168.1.50"
+            android:inputType="textUri"
+            android:textColor="@color/text"
+            android:textColorHint="@color/text_dim"
+            android:minHeight="48dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="6dp">
+            android:layout_marginTop="4dp">
 
-            <Spinner
-                android:id="@+id/device_spinner"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:minHeight="48dp" />
+            <Button android:id="@+id/wifi_connect_btn" style="@style/BtBtn"
+                android:text="Подключить Wi-Fi" android:layout_weight="1" />
+            <Button android:id="@+id/wifi_disconnect_btn" style="@style/BtBtn"
+                android:text="Отключить" android:layout_weight="1" />
+            <Button android:id="@+id/ping_btn" style="@style/BtBtn"
+                android:text="Ping" android:layout_weight="0.6" />
         </LinearLayout>
+
+        <!-- Подключение: Bluetooth (для wdpc_server на Linux) -->
+        <View style="@style/Divider" />
+
+        <TextView style="@style/SectionTitle"
+            android:text="ПОДКЛЮЧЕНИЕ — BLUETOOTH (Linux-сервер)" />
+
+        <Spinner
+            android:id="@+id/device_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,11 +77,9 @@
             <Button android:id="@+id/refresh_btn" style="@style/BtBtn"
                 android:text="Поиск" android:layout_weight="1" />
             <Button android:id="@+id/connect_btn" style="@style/BtBtn"
-                android:text="Подключить" android:layout_weight="1" />
+                android:text="Подключить BT" android:layout_weight="1" />
             <Button android:id="@+id/disconnect_btn" style="@style/BtBtn"
-                android:text="Отключить" android:layout_weight="1" />
-            <Button android:id="@+id/ping_btn" style="@style/BtBtn"
-                android:text="Ping" android:layout_weight="0.6" />
+                android:text="Отключить BT" android:layout_weight="1" />
         </LinearLayout>
 
         <View style="@style/Divider" />
@@ -130,7 +153,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="1. На ПК запустите: python3 wdpc_server.py\n2. Нажмите «Поиск», выберите ПК, нажмите «Подключить»\n3. Пары Bluetooth не требуется — сервер принимает соединения сам"
+            android:text="Wi-Fi (Windows): 1) на ПК запустите pc_server_win\\wdpc_server.py; 2) введите показанный IP в поле; 3) «Подключить Wi-Fi». Ничего устанавливать не нужно — только Python 3 из Microsoft Store, если его нет.\nBluetooth: для wdpc_server.py на Linux, пары устройств не требуется."
             android:textColor="@color/text_dim"
             android:textSize="12sp" />
     </LinearLayout>
